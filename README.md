@@ -8,7 +8,7 @@ A responsive website for **Modulus Power and Electrical Controls Limited**, usin
 - CCTV and electric fencing
 - Electrical sales
 
-The home page links to `products.html`, a filterable catalog with 47 product examples. Web-sized catalog images are in `images/catalog/`; cleaned crops of the WhatsApp screenshots are also in `images/products/`.
+The home page links to `products.html`, a filterable catalog with 59 product examples. Web-sized catalog images are in `images/catalog/`; cleaned crops of the WhatsApp screenshots are also in `images/products/`.
 
 ## Preview
 

@@ -45,7 +45,19 @@ const productItems = [
   { id:"f2-27", name:"4 mm² electrical cable coils", category:"wiring", label:"Cables & accessories", description:"Packaged electrical cable marked 4 mm²." },
   { id:"f2-28", name:"Digital automatic transfer switch", category:"switchgear", label:"Switchgear", description:"Four pole automatic transfer switch with digital status display." },
   { id:"f2-29", name:"CHINT molded case circuit breakers", category:"switchgear", label:"Switchgear", description:"Selection of molded case circuit breakers." },
-  { id:"f2-30", name:"TENSE EM-06 multifunction meter", category:"controls", label:"Meters & controls", description:"Panel meter for electrical measurements and monitoring." }
+  { id:"f2-30", name:"TENSE EM-06 multifunction meter", category:"controls", label:"Meters & controls", description:"Panel meter for electrical measurements and monitoring." },
+  { id:"f3-02", name:"Europlus digital timer switch", category:"controls", label:"Meters & controls", description:"Programmable timer switch for scheduled electrical control." },
+  { id:"f3-03", name:"Havells molded case circuit breaker", category:"switchgear", label:"Switchgear", description:"Havells circuit breaker for low voltage protection." },
+  { id:"f3-04", name:"Electrical cable range", category:"wiring", label:"Cables & accessories", description:"Flexible, twin flat, armoured and house wiring cable types." },
+  { id:"f3-05", name:"300 mm clear globe garden light", category:"lighting", label:"Lighting & sockets", description:"Clear globe style outdoor garden light fitting." },
+  { id:"f3-06", name:"Europlus 8 way consumer unit", category:"panels", label:"Panels & enclosures", description:"Eight way consumer unit enclosure for domestic distribution." },
+  { id:"f3-07", name:"Europlus 12 way consumer unit", category:"panels", label:"Panels & enclosures", description:"Twelve way consumer unit enclosure for domestic distribution." },
+  { id:"f3-09", name:"Outdoor garden lantern", category:"lighting", label:"Lighting & sockets", description:"Outdoor lantern style garden light fitting." },
+  { id:"f3-10", name:"Sterling 2 gang 2 way switch", category:"lighting", label:"Lighting & sockets", description:"Two gang two way wall switch with black rockers." },
+  { id:"f3-11", name:"Sterling 1 gang 1 way switch", category:"lighting", label:"Lighting & sockets", description:"Single gang one way wall switch." },
+  { id:"f3-12", name:"Sterling 3 gang 2 way switch", category:"lighting", label:"Lighting & sockets", description:"Three gang two way wall switch." },
+  { id:"f3-13", name:"Two gang rocker switch", category:"lighting", label:"Lighting & sockets", description:"Two switch modules in a shared faceplate." },
+  { id:"f3-14", name:"Double switched socket outlet", category:"lighting", label:"Lighting & sockets", description:"Double socket outlet with individual switches." }
 ];
 
 const productGrid = document.querySelector('#product-grid');
