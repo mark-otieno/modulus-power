@@ -1,12 +1,14 @@
 # Modulus Power website shell
 
-A responsive, single-page website for **Modulus Power and Electrical Controls Limited**, using the navy and orange palette and logo from the supplied business card. It presents:
+A responsive website for **Modulus Power and Electrical Controls Limited**, using the navy and orange palette and logo from the supplied business card. It presents:
 
 - Industrial and domestic electrical installation
 - Solar installation and maintenance
 - Refrigeration and air conditioning
 - CCTV and electric fencing
 - Electrical sales
+
+The home page links to `products.html`, a filterable catalog with 47 product examples. Web-sized catalog images are in `images/catalog/`; cleaned crops of the WhatsApp screenshots are also in `images/products/`.
 
 ## Preview
 

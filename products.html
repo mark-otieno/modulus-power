@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082a68">
+  <meta name="description" content="Browse examples of electrical products and equipment supplied by Modulus Power and Electrical Controls Limited.">
+  <title>Electrical Products | Modulus Power</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="products.css">
+</head>
+<body class="products-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Modulus Power home"><img class="brand-logo" src="logo.png" alt="Modulus Power and Electrical Controls Limited"></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu"><span></span><span></span></button>
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <a href="index.html#services">Services</a><a href="products.html" aria-current="page">Products</a><a href="index.html#about">About us</a><a href="index.html#approach">Our approach</a>
+      <a class="nav-cta" href="index.html#contact">Talk to our team <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="catalog">
+    <section class="catalog-hero">
+      <div class="catalog-hero-inner">
+        <p class="eyebrow"><span class="eyebrow-line"></span> ELECTRICAL PRODUCTS &amp; EQUIPMENT</p>
+        <h1>Find the right<br><em>connection.</em></h1>
+        <p>Browse examples from our range of electrical components, switchgear, panels and installation supplies.</p>
+        <a class="button button-lime" href="#product-list">Browse products <span>↓</span></a>
+      </div>
+      <div class="catalog-hero-note">MODULUS POWER <span>·</span> PRODUCT RANGE</div>
+    </section>
+
+    <section class="catalog-section" id="product-list">
+      <div class="catalog-heading">
+        <div><p class="section-kicker">PRODUCT RANGE</p><h2>Electrical essentials,<br><em>all in one place.</em></h2></div>
+        <p class="catalog-intro">These photos show examples of the products and equipment we work with. Contact our team to confirm specifications and availability.</p>
+      </div>
+      <div class="catalog-toolbar">
+        <div class="catalog-filters" role="group" aria-label="Filter products">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All products</button>
+          <button class="filter-button" type="button" data-filter="switchgear" aria-pressed="false">Switchgear</button>
+          <button class="filter-button" type="button" data-filter="controls" aria-pressed="false">Meters &amp; controls</button>
+          <button class="filter-button" type="button" data-filter="panels" aria-pressed="false">Panels &amp; enclosures</button>
+          <button class="filter-button" type="button" data-filter="wiring" aria-pressed="false">Cables &amp; accessories</button>
+          <button class="filter-button" type="button" data-filter="lighting" aria-pressed="false">Lighting &amp; sockets</button>
+        </div>
+        <span class="catalog-count" aria-live="polite"></span>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="catalog-contact">
+      <div><p class="eyebrow"><span class="eyebrow-line"></span> NEED A SPECIFIC ITEM?</p><h2>Let's find<br><em>what you need.</em></h2></div>
+      <div class="catalog-contact-side"><p>Call or email us with the product name, model, or project requirements. We’ll help you check the right option.</p><a class="button button-lime" href="index.html#contact">Contact Modulus Power <span>↗</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer catalog-footer"><a class="brand footer-brand" href="index.html"><img class="brand-logo" src="logo.png" alt="Modulus Power and Electrical Controls Limited"></a><span>Modulus Power and Electrical Controls Limited</span><span>© <span id="year"></span> Modulus Power</span><a href="#catalog">Back to top ↑</a></footer>
+  <script src="script.js"></script>
+  <script src="products.js"></script>
+</body>
+</html>
