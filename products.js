@@ -65,14 +65,49 @@ const catalogCount = document.querySelector('.catalog-count');
 
 productGrid.innerHTML = productItems.map((item) => `
   <article class="product-card" data-category="${item.category}">
-    <div class="product-image-wrap"><img class="product-image" src="images/catalog/${item.id}.jpg" alt="${item.name}" loading="lazy"></div>
+    <div class="product-image-wrap"><button class="product-image-trigger" type="button" data-product-id="${item.id}" aria-label="View full image of ${item.name}"><img class="product-image" src="images/catalog/${item.id}.jpg" alt="${item.name}" loading="lazy"></button></div>
     <div class="product-card-content">
       <p class="product-category">${item.label}</p>
       <h3>${item.name}</h3>
       <p class="product-card-description">${item.description}</p>
-      <a class="product-inquiry" href="mailto:moduluspowerandelectrical@gmail.com?subject=${encodeURIComponent('Product enquiry: ' + item.name)}">Ask about this item <span>↗</span></a>
+      <a class="product-inquiry" href="https://wa.me/254735136692?text=${encodeURIComponent('Hi Modulus Power, I’m interested in ' + item.name + '. Please share more details and availability.')}" target="_blank" rel="noopener noreferrer">Ask about this item <span>↗</span></a>
     </div>
   </article>`).join('');
+
+const productViewer = document.querySelector('#product-viewer');
+const viewerImage = document.querySelector('#viewer-image');
+const viewerTitle = document.querySelector('#viewer-title');
+const viewerInquiry = document.querySelector('#viewer-inquiry');
+const viewerStage = document.querySelector('#viewer-image-stage');
+let viewerScale = 1;
+
+function setViewerScale(scale) {
+  viewerScale = Math.min(3, Math.max(1, scale));
+  viewerImage.style.transform = `scale(${viewerScale})`;
+}
+
+productGrid.addEventListener('click', (event) => {
+  const trigger = event.target.closest('.product-image-trigger');
+  if (!trigger) return;
+  const item = productItems.find((product) => product.id === trigger.dataset.productId);
+  if (!item) return;
+  viewerImage.src = `images/catalog/${item.id}.jpg`;
+  viewerImage.alt = item.name;
+  viewerTitle.textContent = item.name;
+  viewerInquiry.href = `https://wa.me/254735136692?text=${encodeURIComponent('Hi Modulus Power, I’m interested in ' + item.name + '. Please share more details and availability.')}`;
+  viewerStage.scrollTop = 0;
+  viewerStage.scrollLeft = 0;
+  setViewerScale(1);
+  productViewer.showModal();
+});
+
+document.querySelector('#zoom-in').addEventListener('click', () => setViewerScale(viewerScale + 0.5));
+document.querySelector('#zoom-out').addEventListener('click', () => setViewerScale(viewerScale - 0.5));
+document.querySelector('#zoom-reset').addEventListener('click', () => setViewerScale(1));
+document.querySelector('#viewer-close').addEventListener('click', () => productViewer.close());
+productViewer.addEventListener('click', (event) => {
+  if (event.target === productViewer) productViewer.close();
+});
 
 const cards = [...productGrid.querySelectorAll('.product-card')];
 function filterProducts(category) {

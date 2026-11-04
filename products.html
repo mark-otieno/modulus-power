@@ -50,6 +50,19 @@
         <span class="catalog-count" aria-live="polite"></span>
       </div>
       <div class="product-grid" id="product-grid"></div>
+      <dialog class="product-viewer" id="product-viewer" aria-label="Product image viewer">
+        <div class="viewer-toolbar">
+          <p class="viewer-title" id="viewer-title"></p>
+          <div class="viewer-controls" aria-label="Image zoom controls">
+            <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" id="zoom-reset" aria-label="Reset image zoom">Reset</button>
+            <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" class="viewer-close" id="viewer-close" aria-label="Close image viewer">×</button>
+          </div>
+        </div>
+        <div class="viewer-image-stage" id="viewer-image-stage"><img id="viewer-image" alt=""></div>
+        <div class="viewer-footer"><span>Use + and − to zoom in or out</span><a class="button button-lime" id="viewer-inquiry" href="#" target="_blank" rel="noopener noreferrer">Ask about this item on WhatsApp <span>↗</span></a></div>
+      </dialog>
     </section>
 
     <section class="catalog-contact">
