@@ -1,6 +1,12 @@
 # Modulus Power website shell
 
-A responsive, single-page website starter for **Modulus Power and Electrical Controls Limited**. It presents electrical installation, domestic wiring, metering, maintenance and related electrical services. It does not advertise consumer electronics repair or sales.
+A responsive, single-page website for **Modulus Power and Electrical Controls Limited**, using the navy and orange palette and logo from the supplied business card. It presents:
+
+- Industrial and domestic electrical installation
+- Solar installation and maintenance
+- Refrigeration and air conditioning
+- CCTV and electric fencing
+- Electrical sales
 
 ## Preview
 
@@ -17,7 +23,9 @@ The image paths are already wired into `styles.css`. The small “photo coming s
 
 ## Contact details
 
-- Email: moduluspower@gmail.com
-- Phone / WhatsApp: +254 735 136 692
+- Email: moduluspowerandelectrical@gmail.com (business card)
+- Additional email: moduluspower@gmail.com
+- Phone: +254 727 865 863 and +254 735 136 692
+- WhatsApp: +254 735 136 692
 
 The site is a front-end shell; contact buttons open email, phone and WhatsApp. No form backend is configured.
