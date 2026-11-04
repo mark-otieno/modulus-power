@@ -9,7 +9,8 @@
 .service-card{display:flex;flex-direction:column;min-height:445px;padding-bottom:20px}
 .service-card:nth-child(5){border-right:1px solid rgba(255,255,255,.16)}
 .service-card p{max-width:100%;margin:0 0 16px}
-.service-photo{display:block;width:100%;height:155px;object-fit:cover;background:#fff;margin-top:auto}
+.service-photo{display:block;width:100%;height:155px;object-fit:cover;background:#fff;margin:16px 0 0;flex:none}
+.service-symbol{margin:18px 0 12px}
 .service-card>a{position:static;align-self:flex-end;margin-top:12px;color:var(--orange);font-size:9px;font-weight:700;letter-spacing:.02em}
 .service-card>a span{font-size:15px;margin-left:7px}
 @media(max-width:900px){.service-card{min-height:430px}}
