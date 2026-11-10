@@ -60,17 +60,98 @@ const productItems = [
   { id:"f3-14", name:"Double switched socket outlet", category:"lighting", label:"Lighting & sockets", description:"Double socket outlet with individual switches." }
 ];
 
+const newProductSpecs = [
+  ["Exhaust ventilation fan", "fans", "Fans & ventilation", "Wall mounted fan for air circulation and ventilation."],
+  ["Insulated electrical cable coils", "wiring", "Cables & accessories", "Coils of insulated cable for electrical wiring work."],
+  ["Meter connection enclosure", "panels", "Panels & enclosures", "Enclosure for an electricity meter or service connection."],
+  ["Electrical service enclosure", "panels", "Panels & enclosures", "Enclosure for electrical service equipment."],
+  ["Electrical equipment enclosure", "panels", "Panels & enclosures", "Protective enclosure for electrical components."],
+  ["Digital timer switch", "controls", "Meters & controls", "Timer switch for scheduled electrical control."],
+  ["Electrical panel enclosure", "panels", "Panels & enclosures", "Enclosure for assembling electrical control equipment."],
+  ["Metal electrical enclosure", "panels", "Panels & enclosures", "Metal enclosure for electrical installations."],
+  ["Industrial socket outlet", "lighting", "Lighting & sockets", "Industrial socket outlet for power connections."],
+  ["Electromechanical switching component", "switchgear", "Switchgear", "Electrical switching component; confirm model and rating with our team."],
+  ["Packaged electrical lighting component", "lighting", "Lighting & sockets", "Packaged lighting product; contact us to confirm the model."],
+  ["Electrical transformer", "switchgear", "Switchgear", "Transformer for electrical power or control applications."],
+  ["Electric fan heater", "fans", "Fans & ventilation", "Electric fan heater; contact us to confirm the model and availability."],
+  ["Circuit breaker", "switchgear", "Switchgear", "Circuit protection device; confirm its rating before ordering."],
+  ["Circuit breaker", "switchgear", "Switchgear", "Electrical circuit breaker for low voltage protection."],
+  ["Electrical protection device", "switchgear", "Switchgear", "Protective switching device for an electrical installation."],
+  ["Panel mounted electrical component", "controls", "Meters & controls", "Electrical component shown mounted in a panel."],
+  ["Circuit breaker", "switchgear", "Switchgear", "Circuit protection equipment; ask us to confirm the specification."],
+  ["Ventilation fan", "fans", "Fans & ventilation", "Ventilation fan for moving air through an indoor space."],
+  ["Electric motor", "switchgear", "Switchgear", "Electric motor for equipment or industrial applications."],
+  ["Electrical control cabinet", "panels", "Panels & enclosures", "Cabinet for electrical control equipment."],
+  ["Circuit breaker", "switchgear", "Switchgear", "Electrical protection device; confirm the rating with our team."],
+  ["Electrical distribution cabinet", "panels", "Panels & enclosures", "Cabinet for low voltage distribution equipment."],
+  ["Fuse and distribution panel", "panels", "Panels & enclosures", "Panel assembly for electrical distribution and protection."],
+  ["Fuse carrier assembly", "switchgear", "Switchgear", "Fuse carrier assembly for electrical circuit protection."],
+  ["Recessed LED downlight", "lighting", "Lighting & sockets", "Recessed ceiling light fitting."],
+  ["Linear LED light fitting", "lighting", "Lighting & sockets", "Linear light fitting for indoor or work areas."],
+  ["LED bulkhead light", "lighting", "Lighting & sockets", "Bulkhead style light fitting for indoor or outdoor areas."],
+  ["Electricity meter and panel", "controls", "Meters & controls", "Electricity meter shown installed in a service panel."],
+  ["Voltage control device", "controls", "Meters & controls", "Voltage control equipment for an electrical system."],
+  ["Outdoor electrical enclosure", "panels", "Panels & enclosures", "Weather resistant enclosure for outdoor electrical equipment."],
+  ["Havells molded case circuit breaker", "switchgear", "Switchgear", "Havells circuit breaker for low voltage protection."],
+  ["Electrical insulation tape", "wiring", "Cables & accessories", "Electrical insulating tape for wiring work."],
+  ["Electrical control cabinet", "panels", "Panels & enclosures", "Cabinet for housing electrical control equipment."],
+  ["Armoured electrical cable", "wiring", "Cables & accessories", "Armoured cable for protected electrical wiring runs."],
+  ["Exhaust ventilation fan", "fans", "Fans & ventilation", "Ventilation fan for air extraction or circulation."],
+  ["Sterling 100 W LED floodlight", "lighting", "Lighting & sockets", "Packaged 100 watt LED floodlight."],
+  ["Motion and light sensor", "controls", "Meters & controls", "Sensor for detecting movement and controlling lighting."],
+  ["Domestic consumer unit", "panels", "Panels & enclosures", "Consumer unit enclosure for domestic circuit distribution."],
+  ["Packaged wall fan", "fans", "Fans & ventilation", "Packaged wall mounted fan; ask us to confirm the model."],
+  ["Enclosed rotary isolator", "switchgear", "Switchgear", "Enclosed rotary isolator for electrical equipment."],
+  ["Havells wall fan", "fans", "Fans & ventilation", "Wall mounted fan; contact us to confirm model and availability."]
+];
+
+const additionalProductItems = newProductSpecs.map(([name, category, label, description], index) => ({
+  id: `new-${String(index + 1).padStart(2, '0')}`, name, category, label, description,
+  image: `images/catalog/new-${String(index + 1).padStart(2, '0')}.jpg`, kind: 'product'
+})).filter((item) => item.id !== 'new-32'); // Havells MCCB is already listed in the original catalog.
+
+const mixedProductItems = [
+  { id: 'mix-04', name: 'Outdoor garden lighting display', category: 'lighting', label: 'Lighting & sockets', description: 'Outdoor lamp styles shown by the technician; ask about available fittings.' },
+  { id: 'mix-14', name: 'Wall switches and socket outlets', category: 'lighting', label: 'Lighting & sockets', description: 'Modern wall switches and socket outlet options.' },
+  { id: 'mix-18', name: 'USB wall socket outlet', category: 'lighting', label: 'Lighting & sockets', description: 'Wall socket outlet with integrated USB charging ports.' },
+  { id: 'mix-21', name: 'Wall socket with USB charging', category: 'lighting', label: 'Lighting & sockets', description: 'Domestic socket outlet with USB charging ports.' }
+].map((item) => ({ ...item, image: `images/catalog/${item.id}.jpg`, kind: 'product' }));
+
+const installationSpecs = [
+  ['project-01', 'Solar installation in progress', 'Solar power', 'Technician working on a rooftop solar installation.'],
+  ['project-03', 'Solar panel installation', 'Solar power', 'Solar panels being installed on a rooftop.'],
+  ['project-05', 'Solar panel installation', 'Solar power', 'Technician installing rooftop solar panels.'],
+  ['project-06', 'Surface conduit installation', 'Electrical installation', 'Electrical conduit and junction boxes installed on a building exterior.'],
+  ['project-07', 'Outdoor lighting installation', 'Electrical installation', 'Technician assembling an outdoor lamp post.'],
+  ['project-08', 'Outdoor lighting installation', 'Electrical installation', 'Outdoor lamp post installation from a second project angle.'],
+  ['project-10', 'Rooftop solar installation', 'Solar power', 'Solar panels being fitted on a rooftop.'],
+  ['project-13', 'Building wiring work', 'Electrical installation', 'Technician working on electrical wiring in a building.'],
+  ['project-15', 'Completed solar installation', 'Solar power', 'Solar panels installed at a customer site.'],
+  ['project-16', 'Rooftop solar installation', 'Solar power', 'Solar panel installation on a tiled roof.'],
+  ['project-17', 'Solar installation work', 'Solar power', 'Technician carrying out work on a solar panel array.'],
+  ['project-19', 'Outdoor lighting installation', 'Electrical installation', 'Technician assembling an outdoor lighting fitting.']
+].map(([id, name, label, description]) => ({
+  id, name, label, description, category: 'services', kind: 'service', image: `images/installations/${id}.jpg`
+}));
+
+const allItems = [
+  ...productItems.map((item) => ({ ...item, image: `images/catalog/${item.id}.jpg`, kind: 'product' })),
+  ...additionalProductItems,
+  ...mixedProductItems,
+  ...installationSpecs
+];
+
 const productGrid = document.querySelector('#product-grid');
 const catalogCount = document.querySelector('.catalog-count');
 
-productGrid.innerHTML = productItems.map((item) => `
+productGrid.innerHTML = allItems.map((item) => `
   <article class="product-card" data-category="${item.category}">
-    <div class="product-image-wrap"><button class="product-image-trigger" type="button" data-product-id="${item.id}" aria-label="View full image of ${item.name}"><img class="product-image" src="images/catalog/${item.id}.jpg" alt="${item.name}" loading="lazy"></button></div>
+    <div class="product-image-wrap"><button class="product-image-trigger" type="button" data-product-id="${item.id}" aria-label="View full image of ${item.name}"><img class="product-image" src="${item.image}" alt="${item.name}" loading="lazy"></button></div>
     <div class="product-card-content">
       <p class="product-category">${item.label}</p>
       <h3>${item.name}</h3>
       <p class="product-card-description">${item.description}</p>
-      <a class="product-inquiry" href="https://wa.me/254735136692?text=${encodeURIComponent('Hi Modulus Power, I’m interested in ' + item.name + '. Please share more details and availability.')}" target="_blank" rel="noopener noreferrer">Ask about this item <span>↗</span></a>
+      <a class="product-inquiry" href="https://wa.me/254735136692?text=${encodeURIComponent('Hi Modulus Power, I’m interested in ' + item.name + '. Please share more details.')}" target="_blank" rel="noopener noreferrer">Ask about this ${item.kind === 'service' ? 'service' : 'item'} <span>↗</span></a>
     </div>
   </article>`).join('');
 
@@ -89,12 +170,13 @@ function setViewerScale(scale) {
 productGrid.addEventListener('click', (event) => {
   const trigger = event.target.closest('.product-image-trigger');
   if (!trigger) return;
-  const item = productItems.find((product) => product.id === trigger.dataset.productId);
+  const item = allItems.find((product) => product.id === trigger.dataset.productId);
   if (!item) return;
-  viewerImage.src = `images/catalog/${item.id}.jpg`;
+  viewerImage.src = item.image;
   viewerImage.alt = item.name;
   viewerTitle.textContent = item.name;
-  viewerInquiry.href = `https://wa.me/254735136692?text=${encodeURIComponent('Hi Modulus Power, I’m interested in ' + item.name + '. Please share more details and availability.')}`;
+  viewerInquiry.href = `https://wa.me/254735136692?text=${encodeURIComponent('Hi Modulus Power, I’m interested in ' + item.name + '. Please share more details.')}`;
+  viewerInquiry.textContent = `Ask about this ${item.kind === 'service' ? 'service' : 'item'} on WhatsApp ↗`;
   viewerStage.scrollTop = 0;
   viewerStage.scrollLeft = 0;
   setViewerScale(1);
