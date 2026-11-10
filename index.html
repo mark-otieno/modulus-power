@@ -25,9 +25,17 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="hero-image image-placeholder" role="img" aria-label="Electrical installation project photo to be added">
-        <div class="placeholder-note"><span class="camera-icon">⌗</span> Project photography coming soon</div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual-field">
+          <img class="hero-service-image is-active" data-hero-set="service" src="images/hero/solar-roof.jpg" alt="">
+          <img class="hero-service-image hero-service-image--pole" data-hero-set="service" src="images/hero/field-technician.jpg" alt="">
+        </div>
       </div>
+      <div class="hero-product-panel" aria-hidden="true">
+        <img class="hero-product-image is-active" data-hero-set="product" src="images/hero/distribution-board.jpg" alt="">
+        <img class="hero-product-image" data-hero-set="product" src="images/hero/industrial-outlet.jpg" alt="">
+      </div>
+      <svg class="hero-diagonal" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M32 100 L96 0"></path></svg>
       <div class="hero-shade"></div>
       <div class="hero-content">
         <p class="eyebrow"><span class="eyebrow-line"></span> CONNECTING CABLES</p>
@@ -35,8 +43,9 @@
         <p class="hero-copy">Reliable electrical installation, wiring and supply for homes and businesses.</p>
         <div class="hero-actions"><a class="button button-lime" href="#contact">Request a service <span>↗</span></a><a class="text-link" href="#services">Explore what we do <span>↓</span></a></div>
       </div>
-      <div class="hero-meta"><span>01 / 03</span><span class="meta-rule"></span><span>Power. Safety. Confidence.</span></div>
+      <div class="hero-meta"><span class="hero-slide-counter">01 / 02</span><span class="meta-rule"></span><span>Power. Safety. Confidence.</span></div>
       <div class="hero-vertical">MODULUS POWER AND ELECTRICAL CONTROLS LIMITED</div>
+      <div class="hero-visual-controls"><span>PROJECTS &amp; PRODUCTS</span><button type="button" class="hero-motion-toggle" aria-label="Pause image animation" aria-pressed="false"><span aria-hidden="true">Ⅱ</span> Pause</button></div>
     </section>
 
     <section class="intro section-pad" id="about">
