@@ -18,7 +18,7 @@ navigation.querySelectorAll('a').forEach((link) => {
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
-const heroTiles = [...document.querySelectorAll('[data-hero-tile]')];
+const heroSlideshowImage = document.querySelector('[data-hero-slideshow]');
 const heroCatalogIds = [
   ...Array.from({ length: 17 }, (_, index) => `f1-${String(index + 1).padStart(2, '0')}`),
   ...Array.from({ length: 30 }, (_, index) => `f2-${String(index + 1).padStart(2, '0')}`),
@@ -27,37 +27,46 @@ const heroCatalogIds = [
   'mix-04', 'mix-14', 'mix-18', 'mix-21'
 ];
 const heroProductPhotos = heroCatalogIds.map((id) => `images/catalog/${id}.jpg`);
+const heroServicePhotos = [
+  'images/services/electrical-installation.jpg',
+  'images/services/solar-installation.jpg',
+  'images/services/refrigeration-air-conditioning.jpg',
+  'images/services/cctv-electric-fencing.jpg',
+  'images/services/electrical-sales.jpg',
+  'images/installations/project-01.jpg',
+  'images/installations/project-03.jpg',
+  'images/installations/project-05.jpg',
+  'images/installations/project-06.jpg',
+  'images/installations/project-07.jpg',
+  'images/installations/project-08.jpg',
+  'images/installations/project-10.jpg',
+  'images/installations/project-13.jpg',
+  'images/installations/project-15.jpg',
+  'images/installations/project-16.jpg',
+  'images/installations/project-17.jpg',
+  'images/installations/project-19.jpg'
+];
+const heroSlideshowPhotos = [...heroProductPhotos, ...heroServicePhotos];
 
-function shuffle(items) {
-  const shuffled = [...items];
-  for (let index = shuffled.length - 1; index > 0; index -= 1) {
-    const swapIndex = Math.floor(Math.random() * (index + 1));
-    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
-  }
-  return shuffled;
-}
+if (heroSlideshowImage) {
+  const choosePhoto = (currentPhoto = '') => {
+    const choices = heroSlideshowPhotos.filter((photo) => photo !== currentPhoto);
+    return choices[Math.floor(Math.random() * choices.length)];
+  };
 
-if (heroTiles.length) {
-  const firstPhotos = shuffle(heroProductPhotos);
-  heroTiles.forEach((tile, index) => {
-    tile.src = firstPhotos[index];
-    tile.dataset.heroImage = firstPhotos[index];
-  });
+  const initialPhoto = choosePhoto();
+  heroSlideshowImage.src = initialPhoto;
+  heroSlideshowImage.dataset.heroImage = initialPhoto;
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduceMotion) {
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     window.setInterval(() => {
-      const tile = heroTiles[Math.floor(Math.random() * heroTiles.length)];
-      const visiblePhotos = new Set(heroTiles.map((image) => image.dataset.heroImage));
-      const choices = heroProductPhotos.filter((photo) => !visiblePhotos.has(photo));
-      if (!choices.length) return;
-      const nextPhoto = choices[Math.floor(Math.random() * choices.length)];
-      tile.classList.add('is-changing');
+      const nextPhoto = choosePhoto(heroSlideshowImage.dataset.heroImage);
+      heroSlideshowImage.classList.add('is-changing');
       window.setTimeout(() => {
-        tile.src = nextPhoto;
-        tile.dataset.heroImage = nextPhoto;
-        tile.classList.remove('is-changing');
-      }, 280);
-    }, 6500);
+        heroSlideshowImage.src = nextPhoto;
+        heroSlideshowImage.dataset.heroImage = nextPhoto;
+        heroSlideshowImage.classList.remove('is-changing');
+      }, 500);
+    }, 6000);
   }
 }
